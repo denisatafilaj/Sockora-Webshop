@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Sockora</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Sockora</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li>
+            <a class="cart-pill" href="cart.html">
+              Cart <span class="badge-count" data-cart-count>0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1>Contact</h1>
+
+      <div class="notice">
+        This contact form is mocked for a demo project. Messages are not sent to a server.
+      </div>
+
+      <form class="form" id="contact-form">
+        <div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" autocomplete="name" required />
+        </div>
+
+        <div>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </form>
+
+      <div id="contact-result" style="margin-top: 1rem;" aria-live="polite"></div>
+
+      <h2 style="margin-top: 2rem;">Company details</h2>
+      <p>
+        <strong>Sockora GmbH</strong><br />
+        Demo Street 12, 1010 Vienna, Austria<br />
+        Email: hello@sockora.example<br />
+        Phone: +43 1 000 0000
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Sockora</strong>
+        <p class="small">Demo webshop for a university exercise.</p>
+      </div>
+
+      <div>
+        <strong>Shop</strong><br />
+        <a href="shop.html">All products</a><br />
+        <a href="cart.html">Cart</a><br />
+        <a href="checkout.html">Checkout</a>
+      </div>
+
+      <div>
+        <strong>Legal</strong><br />
+        <a href="privacy.html">Privacy Policy</a><br />
+        <a href="imprint.html">Imprint</a><br />
+        <a href="accessibility.html">Accessibility</a><br />
+        <a href="license.html">Terms & License</a><br />
+        <a href="media-credits.html">Media Credits</a><br />
+        <a href="about.html">About</a><br />
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" data-cookie-banner hidden role="region" aria-label="Cookie notice">
+    <div class="cookie-row">
+      <div>
+        <strong>Cookies</strong>
+        <p>
+          This demo webshop uses cookies/local storage for cart functionality. Analytics cookies are mocked.
+          Read more in our <a href="privacy.html">Privacy Policy</a>.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn btn-primary" type="button" data-cookie-accept>Accept</button>
+        <button class="btn" type="button" data-cookie-reject>Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const result = document.getElementById("contact-result");
+      result.innerHTML = `
+        <div class="notice">
+          <strong>Message sent (mock)</strong><br />
+          Thanks! This is a demo, so the message was not sent to a server.
+        </div>
+      `;
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
