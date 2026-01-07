@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Media Credits — Sockora</title>
+  <title>Media Credits - Sockora</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -108,6 +108,8 @@
       if (!window.PRODUCTS) return;
 
       const tbody = document.getElementById("credits-body");
+
+      // Product image credits
       const rows = window.PRODUCTS.map(p => {
         const c = p.mediaCredit;
         return `
@@ -123,6 +125,19 @@
       }).join("");
 
       tbody.innerHTML = rows;
+
+      // NEW: YouTube video credits (embedded)
+      tbody.insertAdjacentHTML("beforeend", `
+        <tr>
+          <td>YouTube video (embedded)</td>
+          <td>Video</td>
+          <td>
+Small Films (YouTube)</td>
+          <td><a href="https://www.youtube.com/watch?v=kK65pUijn-0" target="_blank" rel="noopener">View source</a></td>
+          <td><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a></td>
+          <td>Required</td>
+        </tr>
+      `);
     });
   </script>
 </body>
